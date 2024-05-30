@@ -1,0 +1,288 @@
+{% extends './base.html' %}
+{% load course_custom_tags %}
+{% block content %}
+  {% load static %}
+
+  <style>
+    .price {
+      font-size: 20px;
+    }
+  </style>
+
+{% comment %} bannerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+
+*------------------------------------------------------------
+{% endcomment %}
+<div class="vh-100">
+  <section id="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="promo-title">Лучшие курсы для обучения</p>
+          <p>Запишитесь на наши курсы, чтобы узнать все новое и получить готовые к работе курсы, такие как веб-разработка, полный стек, базы данных, Python</p>
+          <a href="http://127.0.0.1:8000/#Courses"><img src="{% static '../static/courses/play.png' %}" class="play-btn" alt="">Изучите курсы</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="{% static '../static/courses/home2.png' %}" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <img src="{% static '../static/courses/wave1.png' %}" class="bottom-img">
+  </section>
+  {% comment %} endd---------------------------------- {% endcomment %}
+  {% comment %}-------------------------------- services--------------------------------------- {% endcomment %}
+  
+<div class="pt-5 pb-5" id="services">
+  <div class="container">
+    <div class="row">
+      <div class="section-head col-sm-12">
+        <h4><span>Посмотрите</span> на наш сервис  !</h4>
+        <p>Наш сервис представляет собой продажу полезных курсов в которых вы можете обучиться проффесионально!</p>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_one"><i class="fa-solid fa-code"></i></span>
+          <h6>Веб-разработка</h6>
+          <p>Услуги по веб-разработке - это услуги по созданию и поддержке веб-сайтов и веб-приложений123. Услуги по разработке веб-сайтов могут включать проектирование, создание, тестирование и обновление веб-сайтов и веб-приложений для различных целей и аудиторий.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_two"><i class="fa-solid fa-globe"></i></span>
+          <h6>Веб-Дизайн</h6>
+          <p>Веб-дизайн - это создание веб-сайтов и страниц, отражающих бренд компании
+             и информации и обеспечить удобство пользования. Внешний вид и дизайн являются неотъемлемыми
+             итальные элементы, независимо от того, разрабатываете ли вы веб-сайт, мобильное приложение или поддерживаете контент.. </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_three"><i class="fa-solid fa-mobile"></i></span>
+          <h6>Отзывчивый дизайн</h6>
+          <p>Отзывчивые общественные товары и услуги четко признают неоднородность потребностей граждан и адаптируются к ним. Вместо того чтобы применять универсальный подход, поставщики услуг, ориентированные на чуткое отношение, реализуют стратегии, позволяющие сегментировать клиентскую базу, а также устанавливать.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_four"><i class="fa-solid fa-briefcase"></i></span>
+          <h6>Создание бренда</h6>
+          <p>Бренд-билдинг - это повышение осведомленности, создание и продвижение компании с помощью стратегий и тактик. Другими словами, создание бренда - это повышение его ценности с помощью рекламных кампаний и стратегий продвижения. Брендинг - важнейший аспект деятельности компании.          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_five"><<i class="fa-solid fa-user-secret"></i></span>
+          <h6>Разработка систем информационной безопасности</h6>
+          <p>В широком смысле специалистами по информационной безопасности называют тех, кто отвечает в команде за защиту от несанкционированного доступа к данным организации извне. Такие сотрудники настраивают сеть, анализируют, какие могут возникать ошибки и неполадки, разворачивают и запускают технологии мониторинга</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_six"><i class="fa fa-anchor"></i></span>
+          <h6>Креативный дизайн</h6>
+          <p>Креативный дизайнер - это человек, который использует дизайнерские навыки для продвижения компании, ее товаров и услуг. В издательских, вещательных и рекламных компаниях работают креативные дизайнеры. К креативным дизайнерам относятся графические дизайнеры и промышленные дизайнеры.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% comment %} --------------------------Services End----------------------------------- {% endcomment %}
+
+{% comment %} -----------------------------Course------------------------------------------------- {% endcomment %}
+
+  <div class="container-fluid image1" id="Courses">
+  <div class="container-fluid">
+    <div class="row">
+      <h1 class="title text-center">
+        Наши курсы
+      </h1>
+      {% for course in courses %}
+        <div class="col mx-auto">
+          <div class="card mx-auto" style="width: 18rem;">
+            <img class="card-img-top" src="{{ course.thumbnail.url }}" alt="Card image cap" />
+            <div class="card-body">
+              <h5 class="card-title">{{ course.name }}</h5>
+              <p class="card-text m-0 p-0">
+                <span class="price">
+                  Сэкономить: {{ course.discount }}%
+                  <br />
+                  <del>{{ course.price|rupee }}</del>&nbsp;
+                  <span>{% cal_sellprice course.price course.discount as value %} {{ value|rupee }}</span>
+                </span>
+              </p>
+            </div>
+            <div class="card-footer">
+              {% is_enrolled request course as enrolled %}
+              <div class="row no-gutters">
+                {% if enrolled %}
+                  <div class="col text-center border-right">
+                    <a href="/course/{{ course.slug }}" class="btn btn-light btn-block">Начать курс</a>
+                  </div>
+                {% else %}
+                  <div class="col border-right">
+                    <a href="/check-out/{{ course.slug }}" class="btn btn-light btn-block">Записаться сейчас</a>
+                  </div>
+                  <div class="col">
+                    <a href="/course/{{ course.slug }}" class="btn btn-light btn-block">Подробнее</a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% comment %} -----------------------------Course End------------------------------------------------- {% endcomment %}
+
+
+{% comment %} ----------------------testimonials------------------------------- {% endcomment %}
+
+<section id="testiomial">
+  <div class="container">
+      <h1 class="section-header pt-5">Отзывы <span>Отзывы от наших клиентов !!.</span></h1>
+      <div class="testimonials">
+          
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="single-item">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="profile">
+                                <div class="img-area">
+                                    <img src="{% static '../static/courses/bacon.jpg' %}" alt="">
+                                </div>
+                                <div class="bio">
+                                    <h2>Imran Naukenov</h2>
+                                    <h4>Backend Developer</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="content">
+                                <p><span><i class="fa fa-quote-left"></i></span>“Спасибо за курсы благодаря которому я обучился на столь интересную профессию! Мы очень благодарны, что вы стали нашим учителем..”</p>
+                                <p class="socials">
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-behance"></i>
+                                    <i class="fa-brands fa-pinterest"></i>
+                                    <i class="fa-brands fa-dribbble"></i>
+                                    <i class="fa-brands fa-vimeo"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="single-item">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="profile">
+                                <div class="img-area">
+                                    <img src="{% static '../static/courses/milos.jpg' %}" alt="">
+                                </div>
+                                <div class="bio">
+                                    <h2>Рикардо Милос</h2>
+                                    <h4>Веб Разработка</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="content">
+                                <p><span><i class="fa fa-quote-left"></i></span>"Я очень доволен курсами веб-разработки, которые я прошел. Они были чрезвычайно информативными и практичными. Преподаватели не только обладали глубокими знаниями в этой области, но и умели преподнести материал доступно и интересно.</p>
+                                <p class="socials">
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-brands fa-behance"></i>
+                                    <i class="fa-brands fa-pinterest"></i>
+                                    <i class="fa-brands fa-dribbble"></i>
+                                    <i class="fa-brands fa-vimeo"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="single-item">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="profile">
+                                <div class="img-area">
+                                    <img src="{% static '../static/courses/samuel.jpg' %}" alt="">
+                                </div>
+                                <div class="bio">
+                                    <h2>СВОфорд</h2>
+                                    <h4>Маркетинг</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="content">
+                                <p><span><i class="fa fa-quote-left"></i></span>Прошел курсы по маркетингу, и могу с уверенностью сказать, что это было одно из лучших инвестиций в мое образование и карьеру. Курсы были структурированными и информативными, преподаватели действительно эксперты в своей области.
+                                </p>
+                                <p class="socials">
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-brands fa-behance"></i>
+                                    <i class="fa-brands fa-pinterest"></i>
+                                    <i class="fa-brands fa-dribbble"></i>
+                                    <i class="fa-brands fa-vimeo"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Предыдущее</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Следующее</span>
+            </button>
+          </div>
+          
+      </div>
+  </div>
+</section>
+
+
+{% comment %} ----------------------testimonials end------------------------------- {% endcomment %}
+
+{% comment %} -------------------about us-------------------------------- {% endcomment %}
+
+<section id="about-us">
+  <div class="container">
+    <h1 class="title text-center">
+      Почему вы должны выбрать именно нас ?
+    </h1>
+    <div class="row">
+      <div class="col-md-6 about-us">
+        <p class="about-title1" >Почему мы не такие как все</p>
+        <ul>
+          <li>Мы демонстрируем обширные знания о компании и ее ценностях.</li>
+          <li>Мы подчеркиваем увлеченность кандидата своей профессией.</li>
+          <li>Мы лучше убеждаем интервьюера в том, что кандидат останется здесь надолго..</li>
+<!--          <li>Мы демонстрируем обширные знания о компании и ее ценностях.</li>-->
+          <li>Мы разные, учитесь у нас</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static '../static/courses/network.png' %}" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+
+{% comment %} -------------------about us end-------------------------------- {% endcomment %}
+  
+{% endblock %}
+
+{% block services %}
+
+{% endblock services %}
+
+
